@@ -36,6 +36,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationMgr.requestWhenInUseAuthorization()
         locationMgr.startUpdatingLocation()
         locationMgr.delegate = self
+        
+        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(addNewLocation(gesture:)))
+        gesture.minimumPressDuration = 2
+        map.addGestureRecognizer(gesture)
+    }
+    
+    @objc func addNewLocation(gesture: UIGestureRecognizer) {
+        
+        let touchPoint = gesture.location(in: map)
+        let mapPoint = map.convert(touchPoint, toCoordinateFrom: map)
+        
+        let marker = MKPointAnnotation()
+        marker.coordinate = mapPoint
+        marker.title = "New Location"
+        
+        map.addAnnotation(marker)
     }
 
     

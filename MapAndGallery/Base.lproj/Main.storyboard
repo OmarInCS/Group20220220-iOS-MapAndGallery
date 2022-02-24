@@ -23,6 +23,9 @@
                                 <rect key="frame" x="8" y="823" width="398" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Photo"/>
+                                <connections>
+                                    <segue destination="fuf-oX-Szf" kind="show" id="O73-ni-UV9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -44,6 +47,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="22" y="34"/>
+        </scene>
+        <!--Choose ImageVC-->
+        <scene sceneID="FC4-Ua-0VL">
+            <objects>
+                <viewController id="fuf-oX-Szf" customClass="ChooseImageVC" customModule="MapAndGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ac5-6i-Gkg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h39-ec-LjS">
+                                <rect key="frame" x="8" y="64" width="398" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="bTR-xw-0bi"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1I-wP-VH1">
+                                <rect key="frame" x="8" y="411" width="398" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Select Picture"/>
+                                <connections>
+                                    <action selector="selectPicture:" destination="fuf-oX-Szf" eventType="touchUpInside" id="beo-Td-fVq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEg-D2-NPa">
+                                <rect key="frame" x="8" y="372" width="398" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Tack Picture"/>
+                                <connections>
+                                    <action selector="takePicture:" destination="fuf-oX-Szf" eventType="touchUpInside" id="1yP-ae-jM0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g1g-vv-Xg3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V1I-wP-VH1" firstAttribute="leading" secondItem="g1g-vv-Xg3" secondAttribute="leading" constant="8" id="C5h-dn-men"/>
+                            <constraint firstItem="h39-ec-LjS" firstAttribute="leading" secondItem="g1g-vv-Xg3" secondAttribute="leading" constant="8" id="Ht3-QC-mj6"/>
+                            <constraint firstItem="g1g-vv-Xg3" firstAttribute="trailing" secondItem="h39-ec-LjS" secondAttribute="trailing" constant="8" id="Md3-71-h32"/>
+                            <constraint firstItem="g1g-vv-Xg3" firstAttribute="trailing" secondItem="fEg-D2-NPa" secondAttribute="trailing" constant="8" id="QOK-cF-bqw"/>
+                            <constraint firstItem="V1I-wP-VH1" firstAttribute="top" secondItem="fEg-D2-NPa" secondAttribute="bottom" constant="8" id="XqV-gR-zDu"/>
+                            <constraint firstItem="fEg-D2-NPa" firstAttribute="leading" secondItem="g1g-vv-Xg3" secondAttribute="leading" constant="8" id="je0-Ab-MUG"/>
+                            <constraint firstItem="g1g-vv-Xg3" firstAttribute="trailing" secondItem="V1I-wP-VH1" secondAttribute="trailing" constant="8" id="uDO-bO-hKc"/>
+                            <constraint firstItem="h39-ec-LjS" firstAttribute="top" secondItem="g1g-vv-Xg3" secondAttribute="top" constant="64" id="uiA-N4-9fZ"/>
+                            <constraint firstItem="fEg-D2-NPa" firstAttribute="top" secondItem="h39-ec-LjS" secondAttribute="bottom" constant="8" id="zz1-Ag-Gx2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vmy-PM-to8"/>
+                    <connections>
+                        <outlet property="imageView" destination="h39-ec-LjS" id="Orn-Yp-mhZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ql-fg-GZA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="916" y="43"/>
         </scene>
     </scenes>
     <resources>

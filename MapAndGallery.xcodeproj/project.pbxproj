@@ -13,6 +13,7 @@
 		CE29A59227C76ECA001C3445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE29A59027C76ECA001C3445 /* Main.storyboard */; };
 		CE29A59427C76ECC001C3445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE29A59327C76ECC001C3445 /* Assets.xcassets */; };
 		CE29A59727C76ECC001C3445 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE29A59527C76ECC001C3445 /* LaunchScreen.storyboard */; };
+		CE29A59F27C77A02001C3445 /* ChooseImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE29A59E27C77A02001C3445 /* ChooseImageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CE29A59327C76ECC001C3445 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE29A59627C76ECC001C3445 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE29A59827C76ECC001C3445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE29A59E27C77A02001C3445 /* ChooseImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				CE29A59327C76ECC001C3445 /* Assets.xcassets */,
 				CE29A59527C76ECC001C3445 /* LaunchScreen.storyboard */,
 				CE29A59827C76ECC001C3445 /* Info.plist */,
+				CE29A59E27C77A02001C3445 /* ChooseImageVC.swift */,
 			);
 			path = MapAndGallery;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				CE29A58F27C76ECA001C3445 /* ViewController.swift in Sources */,
 				CE29A58B27C76ECA001C3445 /* AppDelegate.swift in Sources */,
 				CE29A58D27C76ECA001C3445 /* SceneDelegate.swift in Sources */,
+				CE29A59F27C77A02001C3445 /* ChooseImageVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
