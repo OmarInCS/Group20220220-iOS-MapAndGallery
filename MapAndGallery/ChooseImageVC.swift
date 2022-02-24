@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import PhotosUI
 
-class ChooseImageVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class ChooseImageVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, PHPickerViewControllerDelegate {
+    
+    
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -22,7 +25,7 @@ class ChooseImageVC: UIViewController, UIImagePickerControllerDelegate & UINavig
     @IBAction func takePicture(_ sender: Any) {
         
         let imgPicker = UIImagePickerController()
-        imgPicker.sourceType = .photoLibrary
+        imgPicker.sourceType = .camera
         imgPicker.delegate = self
         
         self.present(imgPicker, animated: true, completion: nil)
@@ -39,7 +42,34 @@ class ChooseImageVC: UIViewController, UIImagePickerControllerDelegate & UINavig
     }
     
     @IBAction func selectPicture(_ sender: Any) {
+        
+        var config = PHPickerConfiguration()
+        config.filter = .images
+        
+        let picker = PHPickerViewController(configuration: config)
+        picker.delegate = self
+        
+        
+        self.present(picker, animated: true, completion: nil)
+        
     }
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        
+        let provider = results.first?.itemProvider
+        
+        provider?.loadDataRepresentation(forTypeIdentifier: "public.image", completionHandler: { data, error in
+            
+            DispatchQueue.main.async {
+                self.imageView.image = UIImage(data: data!)
+            }
+            
+        })
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
     /*
     // MARK: - Navigation
 
